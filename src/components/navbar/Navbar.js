@@ -1,31 +1,29 @@
-// CSS
-import styles from './Navbar.module.css';
+// Components
+import { Toolbar, Link } from '@mui/material';
 
-import { NavLink } from 'react-router-dom';
+const Navbar = (props) => {
 
-const Navbar = () => {
+    const { sections, title } = props;
+
     return (
-        <nav className={styles.navbar}>
-            <NavLink className={styles.brand} to="/">
-                Com <span>Amor</span> IF
-            </NavLink>
-            <ul className={styles.links_list}>
-                <li>
-                    <NavLink 
-                        to="/"
-                        className={({ isActive }) => (isActive ? styles.active : '')}>
-                            Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                        to="/about"
-                        className={({ isActive }) => (isActive ? styles.active : '')}>
-                            Sobre
-                    </NavLink>
-                </li>
-            </ul>
-        </nav>
+        <Toolbar
+            component="nav"
+            variant="dense"
+            sx={{ justifyContent: 'space-between', overflowX: 'auto' }}
+        >
+            {sections.map((section) => (
+                <Link
+                    color="inherit"
+                    noWrap
+                    key={section.title}
+                    variant="body2"
+                    href={section.url}
+                    sx={{ p: 1, flexShrink: 0 }}
+                >
+                    {section.title}
+                </Link>
+            ))}
+        </Toolbar>
     );
 }
 

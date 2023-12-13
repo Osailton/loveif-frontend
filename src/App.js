@@ -1,27 +1,39 @@
 import './App.css';
 
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Pages
 import Home from './pages/home/Home';
 import About from './pages/about/About';
+
+// Components
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import { Container } from '@mui/material';
+
+const sections = [
+  { title: 'Home', url: '/' },
+  { title: 'Salas', url: '/' },
+  { title: 'Regimento', url: '/about' },
+  { title: 'Sobre', url: '/about' },
+];
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <BrowserRouter>
-        <Navbar />
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home/>} />
-              <Route path="/about" element={<About/>} />
-            </Routes>
-          </div>
+        <Header />
+        <Navbar sections={sections} />
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Container>
         <Footer />
       </BrowserRouter>
-    </div>
+    </Container>
   );
 }
 

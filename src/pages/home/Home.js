@@ -1,12 +1,15 @@
-// CSS
-import styles from './Home.module.css';
+// Components
+import React from 'react';
+import MainPost from '../../components/mainpost/MainPost';
+import Regiment from '../../components/regiment/Regiment';
 
 const Home = () => {
   return (
-    <div>
-        <h1>Com amor IF!</h1>
-    </div>
-  )
+    <React.Fragment>
+      <MainPost />
+      <Regiment />
+    </React.Fragment>
+  );
 }
 
 export default Home;
