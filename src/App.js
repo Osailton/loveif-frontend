@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Pages
 import Home from './pages/home/Home';
 import About from './pages/about/About';
+import Regulamento from './pages/regiment/Regiment';
 
 // Components
 import Navbar from './components/navbar/Navbar';
@@ -14,8 +15,9 @@ import { Container } from '@mui/material';
 
 const sections = [
   { title: 'Home', url: '/' },
-  { title: 'Salas', url: '/' },
-  { title: 'Regimento', url: '/about' },
+  { title: 'Regulamento', url: '/regiment' },
+  { title: 'Pontuações', url: '/' },
+  { title: 'Mural', url: '/' },
   { title: 'Sobre', url: '/about' },
 ];
 
@@ -29,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/regiment" element={<Regulamento />} />
           </Routes>
         </Container>
         <Footer />
