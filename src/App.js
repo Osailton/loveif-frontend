@@ -1,17 +1,17 @@
 import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Container } from '@mui/material';
 
 // Pages
-import Home from './pages/home/Home';
-import About from './pages/about/About';
-import Regulamento from './pages/regiment/Regiment';
+import Home from './pages/Home';
+import About from './pages/About';
+import Regulamento from './pages/Regiment';
 
 // Components
-import Navbar from './components/navbar/Navbar';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import { Container } from '@mui/material';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 const sections = [
   { title: 'Home', url: '/' },

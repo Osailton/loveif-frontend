@@ -1,27 +1,9 @@
-import { Box, Card, Container, Typography } from '@mui/material';
-import Carousel from 'react-multi-carousel';
-
-// Styles
-import 'react-multi-carousel/lib/styles.css';
+import { Box, Container, Typography } from '@mui/material';
 
 // Images
-import headerImg from '../../img/header.jpg'
-import trophyImg from '../../img/trophy.jpg';
-
-const turmas = {
-  turmaA: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-  },
-  turmaB: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  turmaC: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  }
-}
+import headerImg from '../img/header.jpg'
+import trophyImg from '../img/trophy.jpg';
+import PointsCarousel from '../components/PointsCarousel';
 
 const Home = () => {
   return (
@@ -97,27 +79,7 @@ const Home = () => {
             mt: 4,
           }}
         >
-          <Carousel
-            responsive={turmas}
-            ssr
-            infinite={true}
-          >
-            <Card sx={{ width: 240, height: 300, pt: 4, mb: 1 }} align='center'>
-              <Typography variant='h2'>ADM 3VA</Typography>
-              <Typography variant='h6'>Pontuação</Typography>
-              <Typography variant='body1' color='secondary.dark'>44</Typography>
-            </Card>
-            <Card sx={{ width: 240, height: 300, pt: 4, mb: 1 }} align='center'>
-              <Typography variant='h2'>INFO 3MB</Typography>
-              <Typography variant='h6'>Pontuação</Typography>
-              <Typography variant='body1' color='secondary.dark'>88</Typography>
-            </Card>
-            <Card sx={{ width: 240, height: 300, pt: 4, mb: 1 }} align='center'>
-              <Typography variant='h2'>COM 3MA</Typography>
-              <Typography variant='h6'>Pontuação</Typography>
-              <Typography variant='body1' color='secondary.dark'>22</Typography>
-            </Card>
-          </Carousel>
+          <PointsCarousel />
         </Box>
       </Box>
 

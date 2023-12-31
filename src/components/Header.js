@@ -30,7 +30,6 @@ const Header = () => {
                     Entrar
                 </Button>
             </Toolbar>
-
         </React.Fragment>
     );
 }
