@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 
 // Images
-import headerImg from '../img/header.jpg'
+import headerImg from '../img/header.jpg';
 import trophyImg from '../img/trophy.jpg';
 import PointsCarousel from '../components/PointsCarousel';
 

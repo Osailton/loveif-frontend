@@ -12,6 +12,7 @@ import Regulamento from './pages/Regiment';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Login from './pages/Login';
 
 const sections = [
   { title: 'Home', url: '/' },
@@ -32,6 +33,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/regiment" element={<Regulamento />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Container>
         <Footer />

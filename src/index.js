@@ -1,54 +1,55 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { CookiesProvider } from "react-cookie";
 
 // Stylized
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme } from "@mui/material";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#363062'
+      main: "#363062",
     },
     secondary: {
-      main: '#4D4C7D'
-    }
+      main: "#4D4C7D",
+    },
   },
   typography: {
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: "Montserrat, sans-serif",
     fontSize: 14,
     h1: {
-      fontSize: '3rem',
+      fontSize: "3rem",
       fontWeight: 600,
     },
     h2: {
-      fontSize: '1.75rem',
+      fontSize: "1.75rem",
       fontWeight: 600,
     },
     h3: {
-      fontSize: '1.50rem',
+      fontSize: "1.50rem",
       fontWeight: 600,
     },
     body1: {
-      fontSize: '1.20rem',
+      fontSize: "1.20rem",
       fontWeight: 600,
     },
     body2: {
-      fontSize: '1rem',
+      fontSize: "1rem",
       fontWeight: 600,
     },
-  }
+  },
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
+    <CookiesProvider defaultSetOptions={{ path: '/' }}>
       <App />
-    </ThemeProvider>
-  </React.StrictMode>
+    </CookiesProvider>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

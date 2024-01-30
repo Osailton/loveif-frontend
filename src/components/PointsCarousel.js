@@ -56,15 +56,13 @@ const PointsCarousel = () => {
         // Turns the result into js
         const data = await res.json();
 
-        console.log(data);
-
         setTurmas(data);
     };
 
     useEffect(() => {
 
         // Build the URL
-        const pointsURL = `${apiUrl}pontuacao`;
+        const pointsURL = `${apiUrl}public/pontuacao`;
 
         // Execute once this component is builded
         getTurmasAnoLetivo(pointsURL);
@@ -73,7 +71,7 @@ const PointsCarousel = () => {
 
     return (
         <Slider {...settings}>
-            {turmas && turmas.map(t => { return <TurmaCard turma={t} /> })}
+            {turmas && turmas.map(t => { return <TurmaCard key={t} turma={t} /> })}
         </Slider>
     );
 };
