@@ -1,42 +1,33 @@
-import './App.css';
+import "./App.css";
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Container } from '@mui/material';
-
-// Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Regulamento from './pages/Regiment';
+import { BrowserRouter } from "react-router-dom";
+import { Container } from "@mui/material";
 
 // Components
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Login from './pages/Login';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import RoutePath from "./routes/RoutePath";
+import { AuthProvider } from "./providers/AuthProvider";
 
 const sections = [
-  { title: 'Home', url: '/' },
-  { title: 'Regulamento', url: '/regiment' },
-  { title: 'Pontuações', url: '/' },
-  { title: 'Mural', url: '/' },
-  { title: 'Sobre', url: '/about' },
+  { title: "Home", url: "/" },
+  { title: "Regulamento", url: "/regiment" },
+  { title: "Pontuações", url: "/" },
+  { title: "Mural", url: "/" },
+  { title: "Sobre", url: "/about" },
 ];
 
 function App() {
   return (
     <Container>
       <BrowserRouter>
-        <Header />
-        <Navbar sections={sections} />
-        <Container>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/regiment" element={<Regulamento />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </Container>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <Navbar sections={sections} />
+          <RoutePath />
+          <Footer />
+        </AuthProvider>
       </BrowserRouter>
     </Container>
   );

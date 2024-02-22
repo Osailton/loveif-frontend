@@ -12,6 +12,7 @@ const Home = () => {
         component='img'
         src={headerImg}
         sx={{
+          borderRadius: 1,
           mt: 2,
         }} />
       <Box
@@ -58,6 +59,7 @@ const Home = () => {
         component='img'
         src={trophyImg}
         sx={{
+          borderRadius: 1,
           mt: 6,
         }} />
       <Box

@@ -1,0 +1,6 @@
+const PERMISSIONS = {
+  ROLE_ADMIN: "ROLE_ADMIN",
+  ROLE_AVAL: "ROLE_AVAL",
+};
+
+export default PERMISSIONS;

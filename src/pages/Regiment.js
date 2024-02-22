@@ -46,6 +46,7 @@ const Regiment = () => {
                 src={trophyHeartImg}
                 align='center'
                 sx={{
+                    borderRadius: 1,
                     mt: 6,
                     maxHeight: 400
                 }} />

@@ -46,7 +46,7 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeProvider theme={theme}>
-    <CookiesProvider defaultSetOptions={{ path: '/' }}>
+    <CookiesProvider defaultSetOptions={{ path: "/" }}>
       <App />
     </CookiesProvider>
   </ThemeProvider>
