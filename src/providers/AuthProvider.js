@@ -37,9 +37,6 @@ export const AuthProvider = ({ children }) => {
             headers: header,
           })
           .then((response) => {
-            console.log(
-              "ROLES <response>: " + response.data.roles.map((i) => i)
-            );
             // set user data
             setUser({
               username: response.data.nome,
@@ -88,8 +85,14 @@ export const AuthProvider = ({ children }) => {
     removeCookie("roles");
   };
 
+  const getToken = () => {
+    return cookies.access_token;
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout, getCurrentUser }}>
+    <AuthContext.Provider
+      value={{ user, getToken, login, logout, getCurrentUser }}
+    >
       {children}
     </AuthContext.Provider>
   );
