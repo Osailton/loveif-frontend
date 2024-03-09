@@ -1,7 +1,7 @@
 import { Box, Link, Typography, Container } from "@mui/material";
 
 // Images
-import trophyHeartImg from '../img/trophy_heart.jpg';
+import trophyHeartImg from '../../img/trophy_heart.jpg';
 
 const Regiment = () => {
     return (

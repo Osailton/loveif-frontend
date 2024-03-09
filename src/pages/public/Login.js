@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Container } from "@mui/material";
-import { useAuth } from "../providers/AuthProvider";
+import { useLocation } from "react-router-dom";
+import { Button, Container } from "@mui/material";
+import { useAuth } from "../../providers/AuthProvider";
 
 // Utils
-import { getIFRNUrl } from "../utils/getIFRNUrl";
+import { getIFRNUrl } from "../../utils/getIFRNUrl";
 
 const Login = () => {
   const location = useLocation();
@@ -35,7 +35,7 @@ const Login = () => {
     <Container align="center">
       <div>
         <a href={getIFRNUrl(from)}>
-          <button disabled={loading}>Efetuar Login via SUAP</button>
+          <Button variant="contained" disabled={loading}>Efetuar Login via SUAP</Button>
         </a>
       </div>
     </Container>

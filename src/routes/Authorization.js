@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import Unauthorized from "../pages/Unauthorizad";
+import Unauthorized from "../pages/public/Unauthorizad";
 
 import { useAuth } from "../providers/AuthProvider";
 

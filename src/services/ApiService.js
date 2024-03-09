@@ -12,9 +12,22 @@ export const fetchPrivateData = async (call, token) => {
     const response = await axios.get(url, {
       headers: header,
     });
-    //   .then((response) => {
-    //     return response;
-    //   });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const postPrivateData = async (call, data, token) => {
+  try {
+    const header = {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    };
+    const url = `${API_URL}` + call;
+    const response = await axios.post(url, data, {
+      headers: header
+    });
     return response.data;
   } catch (error) {
     throw error;

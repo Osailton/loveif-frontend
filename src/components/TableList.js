@@ -5,8 +5,13 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Button } from "@mui/material";
 
-const TableList = ({ tableHead, tableKeys, data }) => {
+const TableList = ({ tableHead, tableKeys, data, edit }) => {
+  const handleEditButton = (id) => {
+    edit(id);
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -31,6 +36,14 @@ const TableList = ({ tableHead, tableKeys, data }) => {
                       </TableCell>
                     )
                 )
+              )}
+
+              {e.edit && (
+                <TableCell key={"cellEdit"} align="center">
+                  <Button size="small" onClick={() => handleEditButton(e.id)}>
+                    Editar
+                  </Button>
+                </TableCell>
               )}
             </TableRow>
           ))}

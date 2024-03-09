@@ -1,5 +1,6 @@
 const API_ROUTES = {
-    LIST_ANO_LETIVO: "anoletivo/anos"
-}
+  ANO_LETIVO_LIST: "anoletivo/anos",
+  ANO_LETIVO_INSERT: "anoletivo/ano",
+};
 
 export default API_ROUTES;

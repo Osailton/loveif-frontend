@@ -1,13 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Login from "../pages/Login";
-import Regulamento from "../pages/Regiment";
-import AnoLetivo from "../pages/AnoLetivo";
+import Home from "../pages/public/Home";
+import Login from "../pages/public/Login";
+import Regulamento from "../pages/public/Regiment";
+import About from "../pages/public/About";
+import AnoLetivo from "../pages/admin/anoletivo/AnoLetivo";
 import Authorization from "./Authorization";
-import Unauthorized from "../pages/Unauthorizad";
+import Unauthorized from "../pages/public/Unauthorizad";
 import PERMISSIONS from "../constants/Permissions";
+import AnoLetivoInsert from "../pages/admin/anoletivo/AnoLetivoInsert";
 
 const RoutePath = () => {
   return (
@@ -19,7 +20,7 @@ const RoutePath = () => {
       <Route
         element={
           <Authorization
-            permissions={[PERMISSIONS.ROLE_AVAL, PERMISSIONS.ROLE_ADMIN]}
+            permissions={[PERMISSIONS.ROLE_ADMIN]}
           />
         }
       >
