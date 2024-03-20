@@ -50,7 +50,6 @@ const AnoLetivoInsert = ({ isAddMode, anoLetivo }) => {
       if (isAddMode) {
         postAnoLetivo({ ano_letivo: values.ano, aberto: values.aberto });
       } else {
-        console.log("Aberto?: " + values.aberto);
         postAnoLetivo({
           id: anoLetivo.id,
           ano_letivo: values.ano,
@@ -62,7 +61,7 @@ const AnoLetivoInsert = ({ isAddMode, anoLetivo }) => {
 
   return (
     <InsertEditBox isAddMode={isAddMode} title={"Ano Letivo"}>
-      <Box>
+      <Box sx={{mb: 2}}>
         <TextField
           id="ano"
           type="text"
@@ -75,7 +74,7 @@ const AnoLetivoInsert = ({ isAddMode, anoLetivo }) => {
           <ErrorField>{formik.errors.ano}</ErrorField>
         ) : null}
       </Box>
-      <Box>
+      <Box sx={{mb: 2}}>
         <label>Aberto?</label>
         <Checkbox
           id="aberto"
@@ -85,7 +84,7 @@ const AnoLetivoInsert = ({ isAddMode, anoLetivo }) => {
           checked={formik.values.aberto}
         />
       </Box>
-      <Box>
+      <Box sx={{mb: 2}}>
         <Button
           variant="contained"
           id="btnEnviarAnoLetivo"
