@@ -9,6 +9,7 @@ import Authorization from "./Authorization";
 import Unauthorized from "../pages/public/Unauthorizad";
 import PERMISSIONS from "../constants/Permissions";
 import Turma from "../pages/admin/turma/Turma";
+import Pontuacao from "../pages/admin/pontuacao/Pontuacao";
 
 const RoutePath = () => {
   return (
@@ -24,6 +25,10 @@ const RoutePath = () => {
 
       <Route element={<Authorization permissions={[PERMISSIONS.ROLE_ADMIN]} />}>
         <Route path="/turma" element={<Turma />} />
+      </Route>
+
+      <Route element={<Authorization permissions={[PERMISSIONS.ROLE_AVAL, PERMISSIONS.ROLE_ADMIN]} />}>
+        <Route path="/pontuacao" element={<Pontuacao />} />
       </Route>
 
       <Route path="/accessdenied" element={<Unauthorized />} />

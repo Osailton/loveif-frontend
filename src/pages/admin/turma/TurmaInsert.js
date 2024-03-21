@@ -114,18 +114,6 @@ const TurmaInsert = ({ isAddMode, turma }) => {
               );
             })}
         </Select>
-
-        {/* <TextField
-          id="anoLetivoId"
-          type="text"
-          label="Ano Letivo"
-          size="small"
-          value={formik.values.anoLetivoId}
-          onChange={formik.handleChange}
-        />
-        {formik.errors.anoLetivoId ? (
-          <ErrorField>{formik.errors.anoLetivoId}</ErrorField>
-        ) : null} */}
       </Box>
       <Box sx={{ mb: 2 }}>
         <TextField
