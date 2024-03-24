@@ -61,6 +61,12 @@ const TableList = ({ tableHead, tableKeys, data, edit }) => {
                   </Button>
                 </TableCell>
               )}
+
+              {e.genericButton && (
+                <TableCell key={"cellGenButton"} align="center">
+                  {e.genericButton}
+                </TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>

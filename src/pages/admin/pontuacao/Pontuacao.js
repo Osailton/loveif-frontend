@@ -57,11 +57,28 @@ const Pontuacao = () => {
       });
       setData(lista);
 
-      let turmas = [];
-      lista.map((e) => {
-        if (!turmas.some((i) => i.id == e.turma.id && i.nome == e.turma.nome)) {
-          turmas.push({ id: e.turma.id, nome: e.turma.nome });
-        }
+      // let turmas = [];
+      // lista.map((e) => {
+      //   if (!turmas.some((i) => i.id == e.turma.id && i.nome == e.turma.nome)) {
+      //     turmas.push({ id: e.turma.id, nome: e.turma.nome });
+      //   }
+      // });
+      // setListTurmas(turmas);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+  async function fetchTurmas(idAno) {
+    try {
+      const result = await fetchPrivateData(
+        API_ROUTES.TURMA_LIST,
+        getToken(),
+        "?ano=" + idAno
+      );
+
+      const turmas = result.map((e) => {
+        return { id: e.id, nome: e.nome };
       });
       setListTurmas(turmas);
     } catch (error) {
@@ -105,6 +122,7 @@ const Pontuacao = () => {
 
   const handleChangeAnoLetivoSelected = (e) => {
     setAnoLetivoSelected(e.target.value);
+    fetchTurmas(e.target.value);
   };
 
   const handleChangeTurmaSelected = (e) => {

@@ -63,7 +63,7 @@ export default function Navbar(props) {
             <MenuItem onClick={handleClose}><Link href="/turma">Turma</Link></MenuItem>
             <MenuItem onClick={handleClose}><Link href="/pontuacao">Lançar Pontuação</Link></MenuItem>
             {new String(cookies.roles).includes("ROLE_ADMIN") ? (
-              <MenuItem onClick={handleClose}>Avaliar Lançamentos</MenuItem>
+              <MenuItem onClick={handleClose}><Link href="/avaliacao">Avaliar Lançamentos</Link></MenuItem>
             ) : null}
           </Menu>
         </>
